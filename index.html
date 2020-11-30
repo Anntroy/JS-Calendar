@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Calendar</title>
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 </head>
-<body>
 
-	<script src="script.js"></script>
+<body>
+    <header id="month_header">
+        <p>Month</p>
+    </header>
+    <aside id="side_header">
+        <div class="side_header__top">
+            <i class="fas fa-bars fa-2x hamburger" id="side_header__toggle"></i>
+            <h1 id="side_header__title">JS Calendar</h1>
+        </div>
+        <button id="add_event_btn" class="btn"><i class="fas fa-plus"></i><p id="add_event_p">Add event</p></button>
+    </aside>
+    <main id="main">
+        
+        <div id="add_event_modal">
+        </div>
+
+    </main>
+    <script src="open-close.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
