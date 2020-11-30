@@ -11,7 +11,12 @@
 
 <body>
     <header id="month_header">
-        <p>Month</p>
+            <i class="fas fa-angle-left"></i>
+            <div class="calendar_container__article-month-date">
+                <h2></h2>
+                <p></p>
+            </div>
+            <i class="fas fa-angle-right"></i>
     </header>
     <aside id="side_header">
         <div class="side_header__top">
@@ -24,21 +29,8 @@
         
         <div id="add_event_modal">
         </div>
-
-    </main>
-    <script src="open-close.js"></script>
-    <script src="script.js"></script>
-    <main>
-        <section id="calendarContainer" class="calendar_container">
+            <section id="calendarContainer" class="calendar_container">
             <div class="calendar_container__div">
-                <article class="calendar_container__article-month">
-                    <i class="fas fa-angle-left"></i>
-                    <div class="calendar_container__article-month-date">
-                        <h2>November</h2>
-                        <p>Monday November 30, 2020</p>
-                    </div>
-                    <i class="fas fa-angle-right"></i>
-                </article>
                 <article class="calendar_container__article-weekdays">
                     <div class="day-name">Su</div>
                     <div class="day-name">Mo</div>
@@ -48,8 +40,8 @@
                     <div class="day-name">Fr</div>
                     <div class="day-name">Sa</div>
                 </article>
-                <article class="calendar_container__article">
-                    <div class="prev-date">26</div>
+                <article class="calendar_container__article-days">
+                    <!-- <div class="prev-date">26</div>
                     <div class="prev-date">27</div>
                     <div class="prev-date">28</div>
                     <div class="prev-date">29</div>
@@ -84,20 +76,21 @@
                     <div>27</div>
                     <div>28</div>
                     <div>29</div>
-                    <div>30</div>
+                    <div class="today">30</div>
                     <div>31</div>
-                    <div class="prev-date">1</div>
-                    <div class="prev-date">2</div>
-                    <div class="prev-date">3</div>
-                    <div class="prev-date">4</div>
-                    <div class="prev-date">5</div>
+                    <div class="next-date">1</div>
+                    <div class="next-date">2</div>
+                    <div class="next-date">3</div>
+                    <div class="next-date">4</div>
+                    <div class="next-date">5</div> -->
                 </article>
             </div>
-        </section>
+        </section>    
     </main>
     <footer id="footer">
-	</footer>
+    </footer>
 	<script src="script.js"></script>
+    <script src="open-close.js"></script>
 </body>
 
 </html>
