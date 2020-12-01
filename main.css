@@ -1,267 +1,362 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
 html {
-    font-size: 62.5%; /* 1 rem == 10 px*/
+  font-size: 62.5%; /* 1 rem == 10 px*/
 }
 
 #month_header {
-    position: fixed;
-    width: 100%;
-    height: 12rem;
-    z-index: -1;
-    background-color: rgb(176, 158, 247);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
-    text-align: center;
-    color: white;
-    text-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.4);
-    justify-content: space-around;
-    margin: 0;
-    left: 10vw;
+  position: fixed;
+  width: 80vw;
+  height: 12rem;
+  z-index: -1;
+  background-color: rgb(176, 158, 247);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  left: 20vw;
+  padding: 0 2rem;
+  color: white;
+  text-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.4);
+  margin: 0;
 }
 
 #month_header i {
-    font-size: 2.5rem;
-    cursor: pointer;
+  font-size: 2.5rem;
+  cursor: pointer;
 }
 
 #month_header h2 {
-    font-size: 3rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-    margin-bottom: 1rem;
+  font-size: 3rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-bottom: 1rem;
 }
 
 #month_header p {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 #side_header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    position: fixed;
-    width: 10rem;
-    height: 100%;
-    padding: 20px;
-    background-color: rgb(98, 64, 233);
-    color: white;
-    font-weight: 900;
-    font-size: 0.8em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  width: 20vw;
+  height: 100%;
+  padding: 20px;
+  background-color: rgb(98, 64, 233);
+  color: white;
+  font-weight: 900;
+  font-size: 1.2em;
 }
 
 .side_header__top {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    margin: 0 0 30px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 0 30px 0;
 }
 
 .side_header__top .hamburger {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #side_header .btn {
-    padding: 5px 15px;
-    margin: 20px 0;
-    border-radius: 10px;
-    border: none;
-    height: 40px;
-    color: rgb(98, 64, 233);
-    font-weight: 600;
-    text-transform: uppercase;
-    cursor: pointer;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  padding: 5px 15px;
+  margin: 20px 0;
+  border-radius: 10px;
+  border: none;
+  height: 40px;
+  color: rgb(98, 64, 233);
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#side_header__toggle {
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+#side_header .btn {
+  padding: 5px 15px;
+  margin: 20px 0;
+  border-radius: 50px;
+  border: none;
+  height: 40px;
+  color: rgb(98, 64, 233);
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 #side_header .btn p {
-    margin-left: 8px;
+  margin-left: 8px;
 }
 
 #close_modal_btn {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #modal_display {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    overflow: auto;
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(98, 64, 233, 0.489);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(98, 64, 233, 0.489);
 }
 
 #modal_container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    top: 80px;
-    width: 40%;
-    left: 30%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  top: 80px;
+  width: 40%;
+  left: 30%;
 }
 
 #modal_header {
-    color: white;
-    background-color: rgb(134, 104, 251);
-    width: 100%;
-    display: flex;
-    justify-content: end;
-    padding: 10px 5px;
-    margin: 10px 0 0;
-    border-radius: 20px 20px 0 0;
+  color: white;
+  background-color: rgb(134, 104, 251);
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  padding: 10px 5px;
+  margin: 10px 0 0;
+  border-radius: 20px 20px 0 0;
 }
 
 #modal_header i {
-    padding: 0 15px;
+  padding: 0 15px;
 }
 
 #modal_body {
-    background-color: white;
-    border-radius: 0 0 20px 20px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 50px;
+  background-color: white;
+  border-radius: 0 0 20px 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
 }
 
 #modal_body form {
-    width: 80%;
+  width: 80%;
 }
 
 .form_label {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
 
 .form_field {
-    width: 100%;
-    height: 40px;
-    margin: 10px 0;
-    border: 2px solid rgb(189, 189, 189);
+  width: 100%;
+  height: 40px;
+  margin: 10px 0;
+  border: 2px solid rgb(189, 189, 189);
 }
 
 .form_checkbox {
-    height: 25px;
-    width: 25px;
-    margin: 0 10px 0 0;
-    justify-content: center;
+  height: 25px;
+  width: 25px;
+  margin: 0 10px 0 0;
+  justify-content: center;
 }
 
 .checkbox_label {
-    display: flex;
-    flex-direction: row;
-    padding: 10px;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  align-items: center;
 }
 
 textarea {
-    resize: none;
-    margin: 10px 0;
-    border: 2px solid rgb(189, 189, 189);
+  resize: none;
+  margin: 10px 0;
+  border: 2px solid rgb(189, 189, 189);
 }
 
 #add_event_submit {
-    background-color: rgb(98, 64, 233);
-    color: white;
-    padding: 10px 20px;
-    margin: 0 10px;
-    border: none;
-    border-radius: 10px;
-    text-transform: uppercase;
+  background-color: rgb(98, 64, 233);
+  color: white;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 10px;
+  text-transform: uppercase;
+  width: 100%;
+  height: 40px;
+  margin: 10px 0;
+  border: 2px solid rgb(189, 189, 189);
+  padding: 10px;
+  font-size: 0.8em;
+  font-weight: 300;
 }
 
-@media (max-width: 1000px) {
-    #modal_container {
-        width: 50%;
-        left: 25%;
-    }
+.form_field:hover,
+.form_field:focus {
+  border: 2px solid rgb(98, 64, 233);
 }
 
+textarea {
+  resize: none;
+  margin: 10px 0;
+  border: 2px solid rgb(189, 189, 189);
+  padding: 10px;
+  font-size: 0.8em;
+  font-weight: 300;
+}
+
+.form_btn_container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.event_form_btn {
+  background-color: rgb(98, 64, 233);
+  color: white;
+  padding: 10px 20px;
+  margin: 80px 10px;
+  border: none;
+  border-radius: 50px;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100px;
+}
 
 /* Main area */
-.calendar_container {
+
+#main {
     position: fixed;
+    left: 20vw;
+    width: 80vw;
     top: 12rem;
-    left: 10rem;
-    color: #222227;
+    z-index: -1;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+  }
+
+.calendar_container {
+  color: #222227;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .calendar_container__div {
-    width: 45rem;
-    height: 52rem;
+  width: 45rem;
+  height: 52rem;
 }
 
 .calendar_container__article-weekdays {
-    width: 100%;
-    height: 5rem;
-    display: flex;
-    align-items: center;
-    padding: 0 1rem;
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
 }
 
 .calendar_container__article-weekdays div {
-    font-size: 1.5rem;
-    font-weight: 400;
-    letter-spacing: 0.1rem;
-    width: calc(44.2rem / 7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.5);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  width: calc(44.2rem / 7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.5);
 }
 
 .calendar_container__article-days {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0.2rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.2rem;
 }
 
 .calendar_container__article-days div {
-    font-size: 1.4rem;
-    margin: 0.3rem;
-    width: calc(40.2rem / 7);
-    height: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.5);
+  font-size: 1.4rem;
+  margin: 0.3rem;
+  width: calc(40.2rem / 7);
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.5);
 }
 
-.calendar_container__article-days div:hover:not(.today){
-    color: white;
-    background-color: rgb(98, 64, 233);
-    border: 0.2rem solid #777;
-    cursor: pointer;
+.calendar_container__article-days div:hover:not(.today) {
+  color: white;
+  background-color: rgb(98, 64, 233);
+  border: 0.2rem solid #777;
+  cursor: pointer;
 }
 
 .prev-date,
 .next-date {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 .today {
-    background-color: rgb(176, 158, 247);
+  background-color: rgb(176, 158, 247);
+}
+
+@media (max-width: 1000px) {
+  #modal_container {
+    width: 50%;
+    left: 25%;
+  }
+}
+
+@media (max-width: 850px) {
+  #side_header {
+    width: 60px;
+    padding: 20px;
+  }
+
+  #month_header {
+    left: 60px;
+    width: calc(100% - 60px);
+  }
+
+  #main {
+    left: 60px;
+    width: calc(100% - 60px);
+  }
+
+  #side_header__title {
+    display: none;
+  }
+
+  #side_header .btn p {
+    display: none;
+  }
+
+  #side_header__toggle {
+    cursor: pointer;
+    margin: 0 auto;
+  }
 }
