@@ -1,35 +1,48 @@
 //Open and close sidebar
-var sideBarToggle = document.getElementById("side_header__toggle");
-sideBarToggle.addEventListener("click", closeSidebar);
+var sideBarToggle = document.getElementById('side_header__toggle');
+var sideHeader = document.getElementById('side_header');
+var sideHeaderTitle = document.getElementById('side_header__title');
+var addEventP = document.getElementById('add_event_p');
+var monthHeader = document.getElementById('month_header');
+var main = document.getElementById('main');
+var calendarContainer = document.getElementById('calendarContainer');
 
-function closeSidebar() {
-  document.getElementById("side_header").style.width = "7vw";
-  document.getElementById("side_header__title").style.display = "none";
-  document.getElementById("add_event_p").style.display = "none";
-  document.getElementById("side_header__toggle").style.margin = "0 auto";
-  document.getElementById("month_header").style.left = "60px";
-  document.getElementById("month_header").style.width = "calc(100% - 60px)";
-  document.getElementById("main").style.left = "60px";
-  document.getElementById("main").style.width = "calc(100% - 60px)";
-  // document.getElementById("calendarContainer").style.marginLeft = "8vw";
-  document
-    .getElementById("side_header__toggle")
-    .addEventListener("click", openSidebar);
-
-  function openSidebar() {
-    document.getElementById("side_header").style.width = "20vw";
-    document.getElementById("side_header__title").style.display = "block";
-    document.getElementById("add_event_p").style.display = "block";
-    document.getElementById("side_header__toggle").style.marginLeft = "5px";
-    document.getElementById("month_header").style.left = "20vw";
-    document.getElementById("month_header").style.width = "80vw";
-    document.getElementById("main").style.left = "20vw";
-    document.getElementById("main").style.width = "80vw";
-    document
-      .getElementById("side_header__toggle")
-      .addEventListener("click", closeSidebar);
-  }
-}
+sideBarToggle.addEventListener('click', function () {
+    sideBarToggle.classList.toggle('closed');
+    if(sideBarToggle.classList.contains('closed')) {
+      console.log('side_header__toggle_closed');
+      sideBarToggle.classList.remove('side_header__toggle_opened');
+      sideBarToggle.classList.add('side_header__toggle_closed');
+      sideHeader.classList.remove('side_header_opened');
+      sideHeader.classList.add('side_header_closed');
+      sideHeaderTitle.classList.remove('side_header__title_opened');
+      sideHeaderTitle.classList.add('side_header__title_closed');
+      addEventP.classList.remove('add_event_p_opened');
+      addEventP.classList.add('add_event_p_closed');
+      monthHeader.classList.remove('month_header_opened');
+      monthHeader.classList.add('month_header_closed');
+      main.classList.remove('main_title_opened');
+      main.classList.add('main_closed');
+      calendarContainer.remove('calendar_container_opened');
+      calendarContainer.classList.add('calendar_container_closed');
+    } else {
+      console.log('side_header__toggle_opened');
+      sideBarToggle.classList.remove('side_header__toggle_closed');
+      sideBarToggle.classList.add('side_header__toggle_opened');
+      sideHeader.classList.remove('side_header_closed');
+      sideHeader.classList.add('side_header_opened');
+      sideHeaderTitle.classList.remove('side_header__title_closed');
+      sideHeaderTitle.classList.add('side_header__title_opened');
+      addEventP.classList.remove('add_event_p_closed');
+      addEventP.classList.add('add_event_p_opened');
+      monthHeader.classList.remove('month_header_closed');
+      monthHeader.classList.add('month_header_opened');
+      main.classList.remove('main_closed');
+      main.classList.add('main_opened');
+      calendarContainer.classList.remove('calendar_container_closed');
+      calendarContainer.classList.add('calendar_container_opened');
+    }
+})
 
 //CREATE AN EVENT
 

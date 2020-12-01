@@ -11,7 +11,7 @@ html {
   font-size: 62.5%; /* 1 rem == 10 px*/
 }
 
-#month_header {
+.month_header {
   position: fixed;
   width: 80vw;
   height: 20vh;
@@ -28,12 +28,22 @@ html {
   margin: 0;
 }
 
-#month_header i {
+.month_header_closed {
+  left: 60px;
+  width: calc(100% - 60px);
+}
+
+.month_header_opened {
+  left: 20vw;
+  width: 80vw;
+}
+
+.month_header i {
   font-size: 2.5rem;
   cursor: pointer;
 }
 
-#month_header h2 {
+.month_header h2 {
   font-size: 2.5rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -41,11 +51,11 @@ html {
   margin-bottom: 1rem;
 }
 
-#month_header p {
+.month_header p {
   font-size: 1.5rem;
 }
 
-#side_header {
+.side_header {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,6 +68,30 @@ html {
   color: white;
   font-weight: 900;
   font-size: 1.2em;
+}
+
+.side_header_closed {
+  width: 7vw;
+}
+
+.side_header_opened {
+  width: 20vw;
+}
+
+.side_header__title_closed {
+  display: none;
+}
+
+.side_header__title_opened {
+  display: block;
+}
+
+.add_event_p_closed {
+  display: none;
+}
+
+.add_event_p_opened {
+  display: block;
 }
 
 .side_header__top {
@@ -86,8 +120,16 @@ html {
   align-items: center;
 }
 
-#side_header__toggle {
+.side_header__toggle {
   cursor: pointer;
+  margin-left: 5px;
+}
+
+.side_header__toggle_closed {
+  margin: 0 auto;
+}
+
+.side_header__toggle_opened {
   margin-left: 5px;
 }
 
@@ -247,7 +289,7 @@ textarea {
 
 /* Main area */
 
-#main {
+.main {
     position: fixed;
     left: 20vw;
     width: 80vw;
@@ -258,14 +300,31 @@ textarea {
     justify-content: center;
   }
 
+.main_closed {
+  left: 60px;
+  width: calc(100% - 60px);
+}
+
+.main_opened {
+  left: 20vw;
+  width: 80vw;
+}
+
 .calendar_container {
   width: 100%;
   color: #222227;
-  /* left: 1rem; */
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 0.8rem;
+}
+
+.calendar_container_closed {
+  margin-left: 8vw;
+}
+
+.calendar_container_opened {
+  margin-left: 0;
 }
 
 .calendar_container__div {
@@ -313,9 +372,6 @@ textarea {
   background-color: rgb(176, 158, 247);
 }
 
-.closed {
-  
-}
 
 @media (max-width: 1000px) {
   #modal_container {
@@ -330,29 +386,29 @@ textarea {
     padding: 20px;
   }
 
-  #month_header {
+  .month_header {
     left: 60px;
     width: calc(100% - 60px);
   }
 
-  #month_header h2{
+  .month_header h2{
     font-size: 1.5rem;
   }
 
-  #month_header p{
+  .month_header p{
     font-size: 1rem;
   }
 
-  #month_header i {
+  .month_header i {
     font-size: 1.5rem;
   }
 
-  #main {
+  .main {
     left: 60px;
     width: calc(100% - 60px);
   }
 
-  #side_header__title {
+  .side_header__title {
     display: none;
   }
 
@@ -373,15 +429,15 @@ textarea {
 }
 
 @media (max-width: 500px) {
-  #month_header h2{
+  .month_header h2{
     font-size: 1rem;
   }
 
-  #month_header p{
+  .month_header p{
     font-size: 0.8rem;
   }
 
-  #month_header i {
+  .month_header i {
     font-size: 1rem;
   }
 
@@ -390,22 +446,18 @@ textarea {
     width: calc(68vw / 7);
     height: 5.2vw;
   }
-
-  #add_event_p {
-    display: none;
-  }
 }
 
 @media (max-width: 340px) {
-  #month_header h2{
+  .month_header h2{
     font-size: 0.8rem;
   }
 
-  #month_header p{
+  .month_header p{
     font-size: 0.6rem;
   }
 
-  #month_header i {
+  .month_header i {
     font-size: 0.8rem;
   }
 

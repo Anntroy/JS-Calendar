@@ -82,16 +82,16 @@ nextMonth.addEventListener('click', function (){
 
 renderCalendar();
 
-const toggle = document.getElementById('side_header__toggle');
+// const toggle = document.getElementById('side_header__toggle');
 
-toggle.addEventListener('click', function () {
-    toggle.classList.toggle('closed');
-})
+// toggle.addEventListener('click', function () {
+//     toggle.classList.toggle('closed');
+// })
 
-const calendarContainer = document.getElementById("calendarContainer");
+// const calendarContainer = document.getElementById("calendarContainer");
 
-if(toggle.classList.contains('closed')) {
-    calendarContainer.style.marginLeft = "8vw";
-} else {
-    calendarContainer.style.marginLeft = "0";
-}
+// if(toggle.classList.contains('closed')) {
+//     calendarContainer.style.marginLeft = "8vw";
+// } else {
+//     calendarContainer.style.marginLeft = "0";
+// }
