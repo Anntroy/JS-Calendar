@@ -16,6 +16,17 @@ const renderCalendar = () => {
     const lastDayIndex = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDay();
     
     const firstDaysPrevMonth = 7 - lastDayIndex - 1;
+
+    const weekDays = [
+        'su',
+        'mo',
+        'tu',
+        'we',
+        'th',
+        'fr',
+        'sa'
+    ];
+    
     
     const months = [
         'January',
@@ -36,6 +47,10 @@ const renderCalendar = () => {
     currantDate.innerHTML = date.toDateString();
     
     let days = '';
+
+    weekDays.forEach(function(weekDay) {
+        days += `<div class="day-name">${weekDay}</div>`;
+    });
     
     for(let dayPrevMonth = firstDayIndex; dayPrevMonth > 0; dayPrevMonth--){
         days += `<div class="prev-date">${lastDayPrevMonth - dayPrevMonth + 1}</div>`;
