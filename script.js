@@ -70,9 +70,6 @@ const renderCalendar = () => {
     }
 }
 
-
-// console.log(prevMonth)
-
 prevMonth.addEventListener('click', function (){
     date.setMonth(date.getMonth() - 1);
     renderCalendar();
@@ -84,3 +81,17 @@ nextMonth.addEventListener('click', function (){
 });
 
 renderCalendar();
+
+const toggle = document.getElementById('side_header__toggle');
+
+toggle.addEventListener('click', function () {
+    toggle.classList.toggle('closed');
+})
+
+const calendarContainer = document.getElementById("calendarContainer");
+
+if(toggle.classList.contains('closed')) {
+    calendarContainer.style.marginLeft = "8vw";
+} else {
+    calendarContainer.style.marginLeft = "0";
+}

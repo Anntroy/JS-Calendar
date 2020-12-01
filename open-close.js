@@ -11,6 +11,7 @@ function closeSidebar() {
   document.getElementById("month_header").style.width = "calc(100% - 60px)";
   document.getElementById("main").style.left = "60px";
   document.getElementById("main").style.width = "calc(100% - 60px)";
+  // document.getElementById("calendarContainer").style.marginLeft = "8vw";
   document
     .getElementById("side_header__toggle")
     .addEventListener("click", openSidebar);
