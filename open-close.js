@@ -21,9 +21,9 @@ sideBarToggle.addEventListener('click', function () {
       addEventP.classList.add('add_event_p_closed');
       monthHeader.classList.remove('month_header_opened');
       monthHeader.classList.add('month_header_closed');
-      main.classList.remove('main_title_opened');
+      main.classList.remove('main_opened');
       main.classList.add('main_closed');
-      calendarContainer.remove('calendar_container_opened');
+      calendarContainer.classList.remove('calendar_container_opened');
       calendarContainer.classList.add('calendar_container_closed');
     } else {
       console.log('side_header__toggle_opened');
