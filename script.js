@@ -5,6 +5,7 @@ const prevMonth = document.querySelector('.prev');
 const nextMonth = document.querySelector('.next');
 
 const date = new Date();
+const today = new Date();
 
 const renderCalendar = () => {
     date.setDate(1);
@@ -44,28 +45,32 @@ const renderCalendar = () => {
     ];
     
     currantMonth.innerHTML = months[date.getMonth()];
-    currantDate.innerHTML = date.toDateString();
+    currantDate.innerHTML = today.toDateString();
     
     let days = '';
 
     weekDays.forEach(function(weekDay) {
-        days += `<div class="day-name">${weekDay}</div>`;
+        days += `<div class="day-name"><p>${weekDay}</p></div>`;
     });
     
     for(let dayPrevMonth = firstDayIndex; dayPrevMonth > 0; dayPrevMonth--){
-        days += `<div tabindex="0" class="prev-date day-month">${lastDayPrevMonth - dayPrevMonth + 1}<i class="fas fa-plus plus_symbol"></i></div>`;
+        days += `<div tabindex="0" class="prev-date day-month"><button class="btn_day"><i class="fas fa-plus"></i>
+            </button><p>${lastDayPrevMonth - dayPrevMonth + 1}</p></div>`;
     }
     
     for(let day = 1; day <= lastDayCurrentMonth; day++) {
         if(day === new Date().getDate() && date.getMonth() === new Date().getMonth()){
-            days += `<div tabindex="0" class="today day-month">${day}<i class="fas fa-plus plus_symbol"></i></div>`;
+            days += `<div tabindex="0" class="today day-month"><button class="btn_day"><i class="fas fa-plus"></i>
+            </button><p>${day}</p></div>`;
         } else {
-            days += `<div tabindex="0" class="day-month">${day}<i class="fas fa-plus plus_symbol"></i></div>`;
+            days += `<div tabindex="0" class="day-month"><button class="btn_day"><i class="fas fa-plus"></i>
+            </button><p>${day}</p></div>`;
         }
     }
     
     for(let dayNextMonth = 1; dayNextMonth <= firstDaysPrevMonth; dayNextMonth++){
-        days +=`<div tabindex="0" class="next-date">${dayNextMonth}<i class="fas fa-plus plus_symbol"></i></div>`;
+        days +=`<div tabindex="0" class="next-date day-month"><button class="btn_day"><i class="fas fa-plus"></i>
+            </button><p>${dayNextMonth}</p></div>`;
         monthDays.innerHTML = days;
     }
 }
@@ -101,17 +106,11 @@ sideBarToggle.addEventListener('click', function () {
 });
 
 const calendarContainerDiv = document.getElementById('calendar_container__div-days');
-const plusSymbol = document.querySelectorAll('.plus_symbol');
-// const calendarContainerSelector = document.querySelectorAll('.calendar_container__div-days');
-
-
-
 
 calendarContainerDiv.addEventListener('mouseover', function (e) {
 
   if(e.target.children.length === 1){
     e.target.children[0].classList.add('uncovered');
-    console.log(e.target.children[0].classList);
   }
 });
 
