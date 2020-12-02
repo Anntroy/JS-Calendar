@@ -33,11 +33,6 @@ html {
   width: calc(100% - 60px);
 }
 
-.month_header_opened {
-  left: 20vw;
-  width: 80vw;
-}
-
 .month_header i {
   font-size: 2.5rem;
   cursor: pointer;
@@ -71,27 +66,24 @@ html {
 }
 
 .side_header_closed {
-  width: 7vw;
+  width: 60px;
 }
 
-.side_header_opened {
-  width: 20vw;
+.side_header__title {
+  display: block;
 }
 
 .side_header__title_closed {
   display: none;
 }
 
-.side_header__title_opened {
+
+.add_event_p {
   display: block;
 }
 
 .add_event_p_closed {
   display: none;
-}
-
-.add_event_p_opened {
-  display: block;
 }
 
 .side_header__top {
@@ -127,10 +119,6 @@ html {
 
 .side_header__toggle_closed {
   margin: 0 auto;
-}
-
-.side_header__toggle_opened {
-  margin-left: 5px;
 }
 
 #side_header .btn {
@@ -305,11 +293,6 @@ textarea {
   width: calc(100% - 60px);
 }
 
-.main_opened {
-  left: 20vw;
-  width: 80vw;
-}
-
 .calendar_container {
   width: 100%;
   color: #222227;
@@ -321,10 +304,6 @@ textarea {
 
 .calendar_container_closed {
   margin-left: 8vw;
-}
-
-.calendar_container_opened {
-  margin-left: 0;
 }
 
 .calendar_container__div {

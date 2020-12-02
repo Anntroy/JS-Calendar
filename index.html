@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <header id="month_header" class="month_header month_header_opened">
+    <header id="month_header" class="month_header">
         <i class="fas fa-angle-left prev"></i>
         <div class="calendar_container__article-month-date">
             <h2></h2>
@@ -19,18 +19,18 @@
         </div>
         <i class="fas fa-angle-right next"></i>
     </header>
-    <aside id="side_header"  class="side_header side_header_opened">
+    <aside id="side_header"  class="side_header">
         <div class="side_header__top">
-            <i class="fas fa-bars fa-2x hamburger side_header__toggle side_header__toggle_opened" id="side_header__toggle"></i>
-            <h1 id="side_header__title" class="side_header__title side_header__title_opened">JS Calendar</h1>
+            <i class="fas fa-bars fa-2x hamburger side_header__toggle" id="side_header__toggle"></i>
+            <h1 id="side_header__title" class="side_header__title">JS Calendar</h1>
         </div>
         <button id="add_event_btn" class="btn"><i class="fas fa-plus"></i>
-            <p id="add_event_p" class="add_event_p add_event_p_opened">Add event</p>
+            <p id="add_event_p" class="add_event_p">Add event</p>
         </button>
     </aside>
-    <main id="main" class="main main_opened">
+    <main id="main" class="main">
         <div id="add_event_modal"></div>
-        <section id="calendarContainer" class="calendar_container calendar_container_opened">
+        <section id="calendarContainer" class="calendar_container">
             <div class="calendar_container__div">
                 <article class="calendar_container__article-days"></article>
             </div>
@@ -39,7 +39,7 @@
     <footer id="footer">
     </footer>
     <script src="script.js"></script>
-    <script src="open-close.js"></script>
+    <!-- <script src="open-close.js"></script> -->
 </body>
 
 </html>

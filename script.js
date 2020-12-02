@@ -82,16 +82,21 @@ nextMonth.addEventListener('click', function (){
 
 renderCalendar();
 
-// const toggle = document.getElementById('side_header__toggle');
+const sideBarToggle = document.getElementById('side_header__toggle');
+const sideHeader = document.getElementById('side_header');
+const sideHeaderTitle = document.getElementById('side_header__title');
+const addEventP = document.getElementById('add_event_p');
+const monthHeader = document.getElementById('month_header');
+const main = document.getElementById('main');
+const calendarContainer = document.getElementById('calendarContainer');
 
-// toggle.addEventListener('click', function () {
-//     toggle.classList.toggle('closed');
-// })
-
-// const calendarContainer = document.getElementById("calendarContainer");
-
-// if(toggle.classList.contains('closed')) {
-//     calendarContainer.style.marginLeft = "8vw";
-// } else {
-//     calendarContainer.style.marginLeft = "0";
-// }
+sideBarToggle.addEventListener('click', function () {
+    // sideBarToggle.classList.toggle('closed');
+    sideBarToggle.classList.toggle('side_header__toggle_closed');
+    sideHeader.classList.toggle('side_header_closed');
+    sideHeaderTitle.classList.toggle('side_header__title_closed');
+    addEventP.classList.toggle('add_event_p_closed');
+    monthHeader.classList.toggle('month_header_closed');
+    main.classList.toggle('main_closed');
+    calendarContainer.classList.toggle('calendar_container_closed');
+});
