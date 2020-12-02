@@ -1,5 +1,11 @@
-//Define an events array with a global scope
-let eventsArray = [];
+//Define an events array with a global scope, and parse it as a JSON object
+  let eventsArray = JSON.parse(localStorage.getItem("eventsList"));
+
+//Create an events array, only if it doesnt previously exist
+  if(eventsArray === null) {
+    eventsArray = [];
+  }
+
 
 //Open the add event modal: event form functions are nested inside
 var addEventBtn = document.getElementById("add_event_btn");
@@ -112,7 +118,7 @@ function openModal() {
   document
     .getElementById("add_initial_date")
     .addEventListener("blur", initialDateValidate);
-    document
+  document
     .getElementById("add_initial_time")
     .addEventListener("blur", initialTimeValidate);
 
@@ -146,7 +152,7 @@ function openModal() {
       document.getElementById("initialDateStatus").innerHTML =
         "Please enter the initial date for the event";
       document.getElementById("initialDateStatus").style.display = "block";
-      return false; 
+      return false;
     } else {
       document.getElementById("initialDateStatus").style.display = "none";
       newEvent.initialDate = document.getElementById("add_initial_date").value;
@@ -155,7 +161,8 @@ function openModal() {
   }
   //----------------------------------------------------------
 
-  function initialTimeValidate(){
+  //Function for validating initial time
+  function initialTimeValidate() {
     var initialTimeInput = document.getElementById("add_initial_time");
     if (initialTimeInput.value == "") {
       document.getElementById("initialDateStatus").innerHTML =
@@ -212,7 +219,7 @@ function openModal() {
     console.log(eventsArray);
   }
   //--------------End of the set event function----------------//
-  //----------------Set end date-----------------------//
+  //----------------Set end date and time----------------------//
   var addEndDate = document.getElementById("add_end_date");
   addEndDate.addEventListener("click", setEndDate);
 
@@ -229,8 +236,7 @@ function openModal() {
             </div>
           </label>`
       );
-      return newEvent.endDate = document.getElementById("end_date").value;
-      
+      return (newEvent.endDate = document.getElementById("end_date").value);
     } else {
       endDateGroup.children[endDateGroup.childElementCount - 1].remove();
       return (newEvent.endDate = null);
@@ -238,9 +244,15 @@ function openModal() {
   }
 
   function setEndTime() {
-    return newEvent.endTime = document.getElementById("end_time").value;
+    if (addEndDate.checked) {
+      return (newEvent.endTime = document.getElementById("end_time").value);
+    } else {
+      return (newEvent.endTime = null);
+    }
+
+    
   }
-  //----------------End of set end date-----------------//
+  //----------------End of set end date and time-----------------//
 
   //-------------------Set reminder---------------------//
   var addReminder = document.getElementById("add_reminder");
