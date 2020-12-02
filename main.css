@@ -300,7 +300,7 @@ textarea {
 }
 
 .calendar_container_closed {
-  margin-left: 5vw;
+  margin-left: 7vw;
 }
 
 .calendar_container__div-days {
@@ -316,7 +316,7 @@ textarea {
 .calendar_container__div-days div {
   font-size: 1.2rem;
   margin: 0.3rem;
-  width: calc(76vw / 7);
+  width: calc(74vw / 7);
   height: 5.2vw;
   display: flex;
   justify-content: center;
