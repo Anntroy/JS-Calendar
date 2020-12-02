@@ -109,15 +109,14 @@ const plusSymbol = document.querySelectorAll('.plus_symbol');
 
 calendarContainerDiv.addEventListener('mouseover', function (e) {
 
-  if(e.target.children[0].classList.containes('day-month')){
+  if(e.target.children.length === 1){
     e.target.children[0].classList.add('uncovered');
     console.log(e.target.children[0].classList);
   }
 });
 
-// calendarContainerDiv.addEventListener('mouseleave', function(e) {
-//   if(e.target.children.length === 1){
-//     e.target.children[0].classList.remove('uncovered');
-//     console.log('leave: ', e.target.children[0]);
-//   }
-// });
+calendarContainerDiv.addEventListener('mouseout', function(e) {
+  if(e.target.children.length === 1){
+    e.target.children[0].classList.remove('uncovered');
+  }
+});
