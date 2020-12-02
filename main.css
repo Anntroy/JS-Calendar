@@ -10,7 +10,7 @@
 html {
   font-size: 62.5%; /* 1 rem == 10 px*/
 }
-
+/* Header area*/
 .month_header {
   position: fixed;
   width: 80vw;
