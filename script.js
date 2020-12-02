@@ -1,6 +1,6 @@
 const currantMonth = document.querySelector('#month_header h2');
 const currantDate = document.querySelector('#month_header p');
-const monthDays = document.querySelector('.calendar_container__article-days')
+const monthDays = document.querySelector('.calendar_container__div-days')
 const prevMonth = document.querySelector('.prev');
 const nextMonth = document.querySelector('.next');
 
