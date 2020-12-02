@@ -50,6 +50,8 @@ html {
   font-size: 1.5rem;
 }
 
+/*-------------Sidebar---------------*/
+
 .side_header {
   display: flex;
   flex-direction: column;
@@ -140,47 +142,50 @@ html {
   margin-left: 8px;
 }
 
+/*----------End of sidebar-----------*/
+
+
+/*-----Modal Container Styles-----*/
+
 #close_modal_btn {
   cursor: pointer;
+  padding: 5px 15px;
 }
 
-#modal_display {
+#modal_background {
   position: fixed;
   left: 0;
   bottom: 0;
   right: 0;
   overflow: auto;
-  z-index: 10;
+  z-index: -1;
   width: 100%;
   height: 100%;
   background-color: rgba(98, 64, 233, 0.489);
 }
 
-#modal_container {
+.modal_container {
   position: relative;
   display: flex;
   flex-direction: column;
-  top: 80px;
+  top: 10px;
   width: 40%;
   left: 30%;
+  z-index: 1;
 }
 
-#modal_header {
-  color: white;
-  background-color: rgb(134, 104, 251);
+.modal_header {
+  color: rgb(134, 104, 251);
+  background-color: white;
   width: 100%;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   padding: 10px 5px;
   margin: 10px 0 0;
   border-radius: 20px 20px 0 0;
 }
 
-#modal_header i {
-  padding: 0 15px;
-}
-
-#modal_body {
+.modal_body {
   background-color: white;
   border-radius: 0 0 20px 20px;
   padding: 20px;
@@ -194,10 +199,19 @@ html {
   width: 80%;
 }
 
+/*---End of modal container styles---*/
+
+
+/*---------Event form styles----------*/
+.form_group {
+  padding: 10px 0;
+}
+
 .form_label {
   display: flex;
+  font-size: 1.5em;
   flex-direction: column;
-  padding: 10px;
+  padding: 0 10px;
 }
 
 .form_field {
@@ -205,6 +219,7 @@ html {
   height: 40px;
   margin: 10px 0;
   border: 2px solid rgb(189, 189, 189);
+  padding: 10px 5px;
 }
 
 .form_checkbox {
@@ -214,48 +229,19 @@ html {
   justify-content: center;
 }
 
-.checkbox_label {
-  display: flex;
-  flex-direction: row;
-  padding: 10px;
-  align-items: center;
-}
-
-textarea {
-  resize: none;
-  margin: 10px 0;
-  border: 2px solid rgb(189, 189, 189);
-}
-
-#add_event_submit {
-  background-color: rgb(98, 64, 233);
-  color: white;
-  padding: 10px 20px;
-  margin: 0 10px;
-  border: none;
-  border-radius: 10px;
-  text-transform: uppercase;
-  width: 100%;
-  height: 40px;
-  margin: 10px 0;
-  border: 2px solid rgb(189, 189, 189);
-  padding: 10px;
-  font-size: 0.8em;
-  font-weight: 300;
-}
-
 .form_field:hover,
 .form_field:focus {
   border: 2px solid rgb(98, 64, 233);
 }
 
-textarea {
+.form_textarea {
   resize: none;
   margin: 10px 0;
   border: 2px solid rgb(189, 189, 189);
   padding: 10px;
   font-size: 0.8em;
   font-weight: 300;
+  height: 70px;
 }
 
 .form_btn_container {
@@ -263,17 +249,33 @@ textarea {
   justify-content: space-around;
 }
 
+.date_time_input {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.date_input {
+width: 65%;
+}
+
+.time_input {
+width: 30%;
+}
+
 .event_form_btn {
   background-color: rgb(98, 64, 233);
   color: white;
   padding: 10px 20px;
-  margin: 80px 10px;
+  margin: 60px 10px 20px;
   border: none;
   border-radius: 50px;
   text-transform: uppercase;
   cursor: pointer;
   width: 100px;
 }
+
+/*------End of event form styles------*/
 
 /* Main area */
 
@@ -316,7 +318,7 @@ textarea {
 .calendar_container__div-days div {
   font-size: 1.2rem;
   margin: 0.3rem;
-  width: calc(76vw / 7);
+  width: calc(74vw / 7);
   height: 5.2vw;
   display: flex;
   justify-content: center;
@@ -361,9 +363,13 @@ textarea {
 
 
 @media (max-width: 1000px) {
-  #modal_container {
-    width: 50%;
-    left: 25%;
+  .modal_container {
+    width: 60%;
+    left: 20%;
+  }
+
+  .modal_body form {
+    width: 90%;
   }
 }
 
@@ -432,6 +438,11 @@ textarea {
     bottom: 0.4rem;
     font-size: 0.7rem;
   }
+
+  .modal_container {
+    width: 70%;
+    left: 15%;
+  }
 }
 
 @media (max-width: 500px) {
@@ -461,6 +472,13 @@ textarea {
     left: 0.7rem;
     bottom: 0.2rem;
     font-size: 0.5rem;
+  }
+}
+
+@media (max-width: 500px){
+  .modal_container {
+    width: 90%;
+    left: 5%;
   }
 }
 
