@@ -302,7 +302,7 @@ width: 30%;
 }
 
 .calendar_container_closed {
-  margin-left: 5vw;
+  margin-left: 7vw;
 }
 
 .calendar_container__div-days {
@@ -321,17 +321,38 @@ width: 30%;
   width: calc(74vw / 7);
   height: 5.2vw;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   border: 1px solid;
 }
 
-.plus_symbol{
-  position: relative;
-  left: 3.2rem;
-  bottom: 0.8rem;
+.btn_day {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  margin: 0.5rem;
+  padding: 0;
+  width: auto;
+  background: white;
+  text-align: center;
+  text-decoration: none;
+  align-self: flex-end;
   font-size: 0.8rem;
-  display: none;
+  /* display: none; */
+  color: rgb(98, 64, 233);
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+}
+
+.day-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.day-month p {
+  display: flex;
+  justify-content: center;
 }
 
 .uncovered {
@@ -343,6 +364,10 @@ width: 30%;
   background-color: rgb(98, 64, 233);
   border: 0.2rem solid rgb(189, 183, 183);
   cursor: pointer;
+}
+
+.calendar_container__div-days div button:hover {
+  display: block;
 }
 
 .day-name {
