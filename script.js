@@ -53,14 +53,14 @@ const renderCalendar = () => {
     });
     
     for(let dayPrevMonth = firstDayIndex; dayPrevMonth > 0; dayPrevMonth--){
-        days += `<div tabindex="0" class="prev-date">${lastDayPrevMonth - dayPrevMonth + 1}<i class="fas fa-plus plus_symbol"></i></div>`;
+        days += `<div tabindex="0" class="prev-date day-month">${lastDayPrevMonth - dayPrevMonth + 1}<i class="fas fa-plus plus_symbol"></i></div>`;
     }
     
     for(let day = 1; day <= lastDayCurrentMonth; day++) {
         if(day === new Date().getDate() && date.getMonth() === new Date().getMonth()){
-            days += `<div tabindex="0" class="today">${day}<i class="fas fa-plus plus_symbol"></i></div>`;
+            days += `<div tabindex="0" class="today day-month">${day}<i class="fas fa-plus plus_symbol"></i></div>`;
         } else {
-            days += `<div tabindex="0">${day}<i class="fas fa-plus plus_symbol"></i></div>`;
+            days += `<div tabindex="0" class="day-month">${day}<i class="fas fa-plus plus_symbol"></i></div>`;
         }
     }
     
@@ -102,7 +102,22 @@ sideBarToggle.addEventListener('click', function () {
 
 const calendarContainerDiv = document.getElementById('calendar_container__div-days');
 const plusSymbol = document.querySelectorAll('.plus_symbol');
+// const calendarContainerSelector = document.querySelectorAll('.calendar_container__div-days');
 
-calendarContainerDiv.addEventListener('click', function(e) {
+
+
+
+calendarContainerDiv.addEventListener('mouseover', function (e) {
+
+  if(e.target.children[0].classList.containes('day-month')){
     e.target.children[0].classList.add('uncovered');
+    console.log(e.target.children[0].classList);
+  }
 });
+
+// calendarContainerDiv.addEventListener('mouseleave', function(e) {
+//   if(e.target.children.length === 1){
+//     e.target.children[0].classList.remove('uncovered');
+//     console.log('leave: ', e.target.children[0]);
+//   }
+// });
