@@ -11,10 +11,10 @@ html {
   font-size: 62.5%; /* 1 rem == 10 px*/
 }
 
-#month_header {
+.month_header {
   position: fixed;
   width: 80vw;
-  height: 12rem;
+  height: 20vh;
   z-index: -1;
   background-color: rgb(176, 158, 247);
   display: flex;
@@ -28,24 +28,29 @@ html {
   margin: 0;
 }
 
-#month_header i {
+.month_header_closed {
+  left: 60px;
+  width: calc(100% - 60px);
+}
+
+.month_header i {
   font-size: 2.5rem;
   cursor: pointer;
 }
 
-#month_header h2 {
-  font-size: 3rem;
+.month_header h2 {
+  font-size: 2.5rem;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.3rem;
   margin-bottom: 1rem;
 }
 
-#month_header p {
+.month_header p {
   font-size: 1.5rem;
 }
 
-#side_header {
+.side_header {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -60,9 +65,29 @@ html {
   font-size: 1.2em;
 }
 
+.side_header_closed {
+  width: 60px;
+}
+
+.side_header__title {
+  display: block;
+}
+
+.side_header__title_closed {
+  display: none;
+}
+
+
+.add_event_p {
+  display: block;
+}
+
+.add_event_p_closed {
+  display: none;
+}
+
 .side_header__top {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   width: 100%;
   margin: 0 0 30px 0;
@@ -72,7 +97,7 @@ html {
   cursor: pointer;
 }
 
-#side_header .btn {
+.side_header .btn {
   padding: 5px 15px;
   margin: 20px 0;
   border-radius: 10px;
@@ -87,12 +112,16 @@ html {
   align-items: center;
 }
 
-#side_header__toggle {
+.side_header__toggle {
   cursor: pointer;
   margin-left: 5px;
 }
 
-#side_header .btn {
+.side_header__toggle_closed {
+  margin: 0 auto;
+}
+
+.side_header .btn {
   padding: 5px 15px;
   margin: 20px 0;
   border-radius: 50px;
@@ -107,7 +136,7 @@ html {
   align-items: center;
 }
 
-#side_header .btn p {
+.side_header .btn p {
   margin-left: 8px;
 }
 
@@ -248,71 +277,77 @@ textarea {
 
 /* Main area */
 
-#main {
+.main {
     position: fixed;
     left: 20vw;
     width: 80vw;
-    top: 12rem;
+    top: 20vh;
     z-index: -1;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
+.main_closed {
+  left: 60px;
+  width: calc(100% - 60px);
+}
+
 .calendar_container {
-  color: #222227;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.calendar_container__div {
-  width: 45rem;
-  height: 52rem;
-}
-
-.calendar_container__article-weekdays {
   width: 100%;
-  height: 5rem;
-  display: flex;
-  align-items: center;
-  padding: 0 1rem;
+  color: #222227;
+  margin-top: 1rem;
 }
 
-.calendar_container__article-weekdays div {
-  font-size: 1.5rem;
-  font-weight: 400;
-  letter-spacing: 0.1rem;
-  width: calc(44.2rem / 7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.5);
+.calendar_container_closed {
+  margin-left: 5vw;
 }
 
-.calendar_container__article-days {
+.calendar_container__div-days {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   padding: 0.2rem;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
-.calendar_container__article-days div {
-  font-size: 1.4rem;
+.calendar_container__div-days div {
+  font-size: 1.2rem;
   margin: 0.3rem;
-  width: calc(40.2rem / 7);
-  height: 5rem;
+  width: calc(76vw / 7);
+  height: 5.2vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.5);
+  border: 1px solid;
 }
 
-.calendar_container__article-days div:hover:not(.today) {
+.plus_symbol{
+  position: relative;
+  left: 3.2rem;
+  bottom: 0.8rem;
+  font-size: 0.8rem;
+  display: none;
+}
+
+.uncovered {
+  display: block;
+}
+
+.calendar_container__div-days div:hover:not(.today):not(.day-name) {
   color: white;
   background-color: rgb(98, 64, 233);
-  border: 0.2rem solid #777;
+  border: 0.2rem solid rgb(189, 183, 183);
   cursor: pointer;
+}
+
+.day-name {
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  padding-bottom: 1rem;
 }
 
 .prev-date,
@@ -324,6 +359,7 @@ textarea {
   background-color: rgb(176, 158, 247);
 }
 
+
 @media (max-width: 1000px) {
   #modal_container {
     width: 50%;
@@ -332,31 +368,124 @@ textarea {
 }
 
 @media (max-width: 850px) {
-  #side_header {
+  .side_header {
     width: 60px;
     padding: 20px;
   }
 
-  #month_header {
+  .month_header {
     left: 60px;
     width: calc(100% - 60px);
   }
 
-  #main {
+  .month_header h2{
+    font-size: 1.5rem;
+  }
+
+  .month_header p{
+    font-size: 1rem;
+  }
+
+  .month_header i {
+    font-size: 1.5rem;
+  }
+
+  .main {
     left: 60px;
     width: calc(100% - 60px);
   }
 
-  #side_header__title {
+  .main_closed {
+    left: 60px;
+    width: calc(100% - 60px);
+  }
+
+  .side_header__title {
     display: none;
   }
 
-  #side_header .btn p {
+  .side_header .btn p {
     display: none;
   }
 
-  #side_header__toggle {
+  .side_header__toggle {
     cursor: pointer;
     margin: 0 auto;
+  }
+
+  .calendar_container_closed {
+    margin-left: 0;
+  }
+
+  .calendar_container__div-days{
+    margin-top: 2.5rem;
+  }
+
+  .calendar_container__div-days div {
+    font-size: 1rem;
+    width: calc(78vw / 7);
+    height: 5.2vw;
+  }
+
+  .calendar_container__div-days div i{
+    left: 1.6rem;
+    bottom: 0.4rem;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .month_header h2{
+    font-size: 1rem;
+  }
+
+  .month_header p{
+    font-size: 0.8rem;
+  }
+
+  .month_header i {
+    font-size: 1rem;
+  }
+
+  .calendar_container__div-days{
+    margin-top: 3rem;
+  }
+
+  .calendar_container__div-days div {
+    font-size: 0.9rem;
+    width: calc(68vw / 7);
+    height: 5.2vw;
+  }
+
+  .calendar_container__div-days div i{
+    left: 0.7rem;
+    bottom: 0.2rem;
+    font-size: 0.5rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .month_header h2{
+    font-size: 0.8rem;
+  }
+
+  .month_header p{
+    font-size: 0.65rem;
+  }
+
+  .month_header i {
+    font-size: 0.8rem;
+  }
+
+  .calendar_container__div-days div {
+    font-size: 0.7rem;
+    width: calc(60vw / 7);
+    height: 5.2vw;
+  }
+
+  .calendar_container__div-days div i{
+    left: 0.3rem;
+    bottom: 0.2rem;
+    font-size: 0.4rem;
   }
 }

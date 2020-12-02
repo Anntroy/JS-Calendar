@@ -11,47 +11,31 @@
 </head>
 
 <body>
-    <header id="month_header">
+    <header id="month_header" class="month_header">
         <i class="fas fa-angle-left prev"></i>
-        <div class="calendar_container__article-month-date">
+        <div>
             <h2></h2>
             <p></p>
         </div>
         <i class="fas fa-angle-right next"></i>
     </header>
-    <aside id="side_header">
+    <aside id="side_header"  class="side_header">
         <div class="side_header__top">
-            <i class="fas fa-bars fa-2x hamburger" id="side_header__toggle"></i>
-            <h1 id="side_header__title">JS Calendar</h1>
+            <i class="fas fa-bars fa-2x hamburger side_header__toggle" id="side_header__toggle"></i>
+            <h1 id="side_header__title" class="side_header__title">JS Calendar</h1>
         </div>
         <button id="add_event_btn" class="btn"><i class="fas fa-plus"></i>
-            <p id="add_event_p">Add event</p>
+            <p id="add_event_p" class="add_event_p">Add event</p>
         </button>
     </aside>
-    <main id="main">
-
-        <div id="add_event_modal">
-        </div>
-        <section id="calendarContainer" class="calendar_container">
-            <div class="calendar_container__div">
-                <article class="calendar_container__article-weekdays">
-                    <div class="day-name">Su</div>
-                    <div class="day-name">Mo</div>
-                    <div class="day-name">Tu</div>
-                    <div class="day-name">We</div>
-                    <div class="day-name">Th</div>
-                    <div class="day-name">Fr</div>
-                    <div class="day-name">Sa</div>
-                </article>
-                <article class="calendar_container__article-days">
-                </article>
-            </div>
-        </section>
+    <main id="main" class="main">
+        <div id="add_event_modal"></div>
+        <article id="calendarContainer" class="calendar_container">
+            <div id="calendar_container__div-days" class="calendar_container__div-days"></div>
+        </article>
     </main>
     <footer id="footer">
     </footer>
     <script src="script.js"></script>
-    <script src="open-close.js"></script>
 </body>
-
 </html>
