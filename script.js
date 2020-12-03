@@ -104,14 +104,14 @@ const renderCalendar = () => {
         }
       } else {
         if((day < 10) && (`${date.getMonth()}` < 10)){
-          days += `<div data-date="${date.getFullYear()}-0${date.getMonth()}-0${day}" tabindex="0" day-month"><button class="btn_day"><i class="fas fa-plus"></i>
+          days += `<div data-date="${date.getFullYear()}-0${date.getMonth()}-0${day}" tabindex="0" class="day-month"><button class="btn_day"><i class="fas fa-plus"></i>
           </button><p>${day}</p></div>`;
         } else {
           if((day < 10) && (`${date.getMonth()}` >= 10)){
-            days += `<div data-date="${date.getFullYear()}-${date.getMonth()}-0${day}" tabindex="0" day-month"><button class="btn_day"><i class="fas fa-plus"></i>
+            days += `<div data-date="${date.getFullYear()}-${date.getMonth()}-0${day}" tabindex="0" class="day-month"><button class="btn_day"><i class="fas fa-plus"></i>
             </button><p>${day}</p></div>`;
           } else {
-            days += `<div data-date="${date.getFullYear()}-${date.getMonth()}-${day}" tabindex="0" day-month"><button class="btn_day"><i class="fas fa-plus"></i>
+            days += `<div data-date="${date.getFullYear()}-${date.getMonth()}-${day}" tabindex="0" class="day-month"><button class="btn_day"><i class="fas fa-plus"></i>
             </button><p>${day}</p></div>`;
           }
         }
