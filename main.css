@@ -315,7 +315,7 @@ width: 30%;
   align-content: center;
 }
 
-.calendar_container__div-days div {
+.calendar_container__div-days > div {
   font-size: 1.2rem;
   margin: 0.3rem;
   width: calc(74vw / 7);
@@ -325,30 +325,44 @@ width: 30%;
   border: 1px solid;
 }
 
+.day_unit_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.event_preview {
+  margin:0.3rem;
+}
+
 .btn_day {
   border: none;
   cursor: pointer;
   outline: none;
-  margin: 0.5rem;
+  margin: 0.3rem;
   padding: 0;
   width: auto;
   background: white;
   text-align: center;
   text-decoration: none;
-  align-self: flex-end;
+  /* align-self: flex-end; */
   font-size: 0.8rem;
-  /* display: none; */
+  /* visibility: hidden; */
+  display: none;
   color: rgb(98, 64, 233);
   border-radius: 50%;
-  height: 20px;
-  width: 20px;
+  height: 1.5rem;
+  width: 1.5rem;
 }
+
 
 .day-name {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+
 
 .day-month p {
   display: flex;
@@ -359,14 +373,14 @@ width: 30%;
   display: block;
 }
 
-.calendar_container__div-days div:hover:not(.today):not(.day-name) {
+.calendar_container__div-days > div:hover:not(.day-name) {
   color: white;
   background-color: rgb(98, 64, 233);
   border: 0.2rem solid rgb(189, 183, 183);
   cursor: pointer;
 }
 
-.calendar_container__div-days div button:hover {
+.calendar_container__div-days > div button:hover {
   display: block;
 }
 
