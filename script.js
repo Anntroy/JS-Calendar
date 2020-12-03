@@ -7,6 +7,31 @@ const nextMonth = document.querySelector('.next');
 const date = new Date();
 const today = new Date();
 
+function setPrevMonth(date) {
+    otherDate = new Date();
+    if(date.getMonth() === 0){
+        otherDate.setMonth(11);
+        otherDate.setYear(date.getFullYear() - 1);
+    }
+    else {
+        otherDate.setMonth(date.getMonth() - 1);
+        otherDate.setYear(date.getFullYear());
+    }
+    return otherDate
+}
+
+function setNextMonth(date){
+    otherDate = new Date();
+    if(date.getMonth() === 11){
+        otherDate.setMonth(0);
+        otherDate.setYear(date.getFullYear() + 1);
+    } else {
+        otherDate.setMonth(date.getMonth() + 1);
+        otherDate.setYear(date.getFullYear());
+    }
+    return otherDate
+}
+
 const renderCalendar = () => {
     date.setDate(1);
     
@@ -54,26 +79,61 @@ const renderCalendar = () => {
     });
     
     for(let dayPrevMonth = firstDayIndex; dayPrevMonth > 0; dayPrevMonth--){
-        days += `<div tabindex="0" class="prev-date day-month"><button class="btn_day"><i class="fas fa-plus"></i>
+        if((`${setPrevMonth(date).getMonth()}` < 10)){
+          days += `<div data-date="${setPrevMonth(date).getFullYear()}-0${setPrevMonth(date).getMonth()}-${lastDayPrevMonth - dayPrevMonth + 1}" tabindex="0" class="prev-date day-month"><button class="btn_day"><i class="fas fa-plus"></i>
             </button><p>${lastDayPrevMonth - dayPrevMonth + 1}</p></div>`;
-    }
-    
-    for(let day = 1; day <= lastDayCurrentMonth; day++) {
-        if(day === new Date().getDate() && date.getMonth() === new Date().getMonth()){
-            days += `<div tabindex="0" class="today day-month"><button class="btn_day"><i class="fas fa-plus"></i>
-            </button><p>${day}</p></div>`;
         } else {
-            days += `<div tabindex="0" class="day-month"><button class="btn_day"><i class="fas fa-plus"></i>
-            </button><p>${day}</p></div>`;
+          days += `<div data-date="${setPrevMonth(date).getFullYear()}-${setPrevMonth(date).getMonth()}-${lastDayPrevMonth - dayPrevMonth + 1}" tabindex="0" class="prev-date day-month"><button class="btn_day"><i class="fas fa-plus"></i>
+              </button><p>${lastDayPrevMonth - dayPrevMonth + 1}</p></div>`;
         }
     }
     
-    for(let dayNextMonth = 1; dayNextMonth <= firstDaysPrevMonth; dayNextMonth++){
-        days +=`<div tabindex="0" class="next-date day-month"><button class="btn_day"><i class="fas fa-plus"></i>
-            </button><p>${dayNextMonth}</p></div>`;
-        monthDays.innerHTML = days;
+    for(let day = 1; day <= lastDayCurrentMonth; day++) {
+      if(day === new Date().getDate() && date.getMonth() === new Date().getMonth()){
+        if((day < 10) && (`${date.getMonth()}` < 10)){
+          days += `<div data-date="${date.getFullYear()}-0${date.getMonth()}-0${day}" tabindex="0" class="today day-month" data><button class="btn_day"><i class="fas fa-plus"></i>
+          </button><p>${day}</p></div>`;
+        } else {
+          if((day < 10) && (`${date.getMonth()}` >= 10)){
+            days += `<div data-date="${date.getFullYear()}-${date.getMonth()}-0${day}" tabindex="0" class="today day-month" data><button class="btn_day"><i class="fas fa-plus"></i>
+            </button><p>${day}</p></div>`;
+          } else {
+            days += `<div data-date="${date.getFullYear()}-${date.getMonth()}-${day}" tabindex="0" class="today day-month" data><button class="btn_day"><i class="fas fa-plus"></i>
+            </button><p>${day}</p></div>`;
+          }
+        }
+      } else {
+        if((day < 10) && (`${date.getMonth()}` < 10)){
+          days += `<div data-date="${date.getFullYear()}-0${date.getMonth()}-0${day}" tabindex="0" class="day-month"><button class="btn_day"><i class="fas fa-plus"></i>
+          </button><p>${day}</p></div>`;
+        } else {
+          if((day < 10) && (`${date.getMonth()}` >= 10)){
+            days += `<div data-date="${date.getFullYear()}-${date.getMonth()}-0${day}" tabindex="0" class="day-month"><button class="btn_day"><i class="fas fa-plus"></i>
+            </button><p>${day}</p></div>`;
+          } else {
+            days += `<div data-date="${date.getFullYear()}-${date.getMonth()}-${day}" tabindex="0" class="day-month"><button class="btn_day"><i class="fas fa-plus"></i>
+            </button><p>${day}</p></div>`;
+          }
+        }
+      }
     }
-}
+    
+    for(let dayNextMonth = 1; dayNextMonth <= firstDaysPrevMonth; dayNextMonth++){
+      if((dayNextMonth < 10) && (`${setNextMonth(date).getMonth()}` < 10)){
+        days +=`<div data-date="${setNextMonth(date).getFullYear()}-0${setNextMonth(date).getMonth()}-0${dayNextMonth}" tabindex="0" class="next-date day-month"><button class="btn_day"><i class="fas fa-plus"></i>
+            </button><p>${dayNextMonth}</p></div>`;
+      } else {
+        if((dayNextMonth < 10) && (`${setNextMonth(date).getMonth()}` >= 10)){
+          days +=`<div data-date="${setNextMonth(date).getFullYear()}-${setNextMonth(date).getMonth()}-0${dayNextMonth}" tabindex="0" class="next-date day-month"><button class="btn_day"><i class="fas fa-plus"></i>
+            </button><p>${dayNextMonth}</p></div>`;
+        } else {
+          days +=`<div data-date="${setNextMonth(date).getFullYear()}-${setNextMonth(date).getMonth()}-0${dayNextMonth}" tabindex="0" class="next-date day-month"><button class="btn_day"><i class="fas fa-plus"></i>
+            </button><p>${dayNextMonth}</p></div>`;
+        }
+      }
+      monthDays.innerHTML = days;
+    }
+  }
 
 prevMonth.addEventListener('click', function (){
     date.setMonth(date.getMonth() - 1);
