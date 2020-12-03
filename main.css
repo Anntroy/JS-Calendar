@@ -286,8 +286,9 @@ width: 30%;
     top: 20vh;
     z-index: -1;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    height: 90%;
   }
 
 .main_closed {
@@ -299,10 +300,6 @@ width: 30%;
   width: 100%;
   color: #222227;
   margin-top: 1rem;
-}
-
-.calendar_container_closed {
-  margin-left: 7vw;
 }
 
 .calendar_container__div-days {
@@ -319,11 +316,11 @@ width: 30%;
   font-size: 1.2rem;
   margin: 0.3rem;
   width: calc(74vw / 7);
-  height: 5.2vw;
+  height: 11vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid;
+  /* border: 1px solid; */
 }
 
 .day_unit_header {
@@ -346,9 +343,7 @@ width: 30%;
   background: white;
   text-align: center;
   text-decoration: none;
-  /* align-self: flex-end; */
   font-size: 0.8rem;
-  /* visibility: hidden; */
   display: none;
   color: rgb(98, 64, 233);
   border-radius: 50%;
@@ -356,20 +351,10 @@ width: 30%;
   width: 1.5rem;
 }
 
-
-.day-name {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-
 .day-month p {
   display: flex;
   align-self: center;
   margin-bottom: 0.5em;
-
 }
 
 .uncovered {
@@ -379,7 +364,7 @@ width: 30%;
 .calendar_container__div-days > div:hover:not(.day-name) {
   color: white;
   background-color: rgb(98, 64, 233);
-  border: 0.2rem solid rgb(189, 183, 183);
+  /* border: 0.2rem solid rgb(189, 183, 183); */
   cursor: pointer;
 }
 
@@ -392,7 +377,9 @@ width: 30%;
   font-weight: 500;
   letter-spacing: 0.1rem;
   padding-bottom: 1rem;
+  align-items: center;
 }
+
 
 .prev-date,
 .next-date {
@@ -441,6 +428,7 @@ width: 30%;
   .main {
     left: 60px;
     width: calc(100% - 60px);
+    height: 90%;
   }
 
   .main_closed {
@@ -469,13 +457,12 @@ width: 30%;
     margin-top: 2.5rem;
   }
 
-  .calendar_container__div-days div {
+  .calendar_container__div-days > div {
     font-size: 1rem;
     width: calc(78vw / 7);
-    height: 5.2vw;
   }
 
-  .calendar_container__div-days div i{
+  .calendar_container__div-days > div i{
     left: 1.6rem;
     bottom: 0.4rem;
     font-size: 0.7rem;
@@ -504,13 +491,12 @@ width: 30%;
     margin-top: 3rem;
   }
 
-  .calendar_container__div-days div {
+  .calendar_container__div-days > div {
     font-size: 0.9rem;
     width: calc(68vw / 7);
-    height: 5.2vw;
   }
 
-  .calendar_container__div-days div i{
+  .calendar_container__div-days > div i{
     left: 0.7rem;
     bottom: 0.2rem;
     font-size: 0.5rem;
@@ -537,13 +523,12 @@ width: 30%;
     font-size: 0.8rem;
   }
 
-  .calendar_container__div-days div {
+  .calendar_container__div-days > div {
     font-size: 0.7rem;
     width: calc(60vw / 7);
-    height: 5.2vw;
   }
 
-  .calendar_container__div-days div i{
+  .calendar_container__div-days > div i{
     left: 0.3rem;
     bottom: 0.2rem;
     font-size: 0.4rem;

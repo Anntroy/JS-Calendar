@@ -2,7 +2,7 @@
 
 // const eventPreview = eventsArray.map((e) => {
 //     return (
-//         `<p class="event_preview">${e.title}</p>`
+//         `<p class="event_preview">${}</p>`
 //     )
 // } )
 

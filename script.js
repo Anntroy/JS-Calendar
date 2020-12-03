@@ -236,9 +236,12 @@ calendarContainerDiv.addEventListener("mouseover", function (e) {
     e.target.children[0].children[1].classList.add("uncovered");
   } else if (e.target.className == "day_unit_header") {
     e.target.children[1].classList.add("uncovered");
-  } else if (e.target.className == "calendar_day") {
-    e.target.parentNode.children[0].children[1].classList.add("uncovered");
+  } else if (e.target.className == "today day-month") {
+    e.target.children[0].children[1].classList.add("uncovered");
   }
+  // else if (e.target.className == "calendar_day") {
+  //   e.target.parentNode.children[0].children[1].classList.add("uncovered");
+  // }
 });
 
 calendarContainerDiv.addEventListener("mouseout", function (e) {
@@ -247,7 +250,10 @@ calendarContainerDiv.addEventListener("mouseout", function (e) {
     e.target.children[0].children[1].classList.remove("uncovered");
   } else if (e.target.className == "day_unit_header") {
     e.target.children[1].classList.remove("uncovered");
-  } else if (e.target.className == "calendar_day") {
-    e.target.parentNode.children[0].children[1].classList.remove("uncovered");
+  } else if (e.target.className == "today day-month") {
+    e.target.children[0].children[1].classList.remove("uncovered");
   }
+  // else if (e.target.className == "calendar_day") {
+  //   e.target.parentNode.children[0].children[1].classList.remove("uncovered");
+  // }
 });
